@@ -1,26 +1,56 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
-</template>
-
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+<script setup>
+import confeitti1 from "@/assets/confeitti1.gif";
 </script>
 
+<template>
+  <div class="container">
+    <img :src="confeitti1" alt="" class="confeitti1 mirror" />
+    <h1>Hora de ir embora!</h1>
+    <img :src="confeitti1" alt="" class="confeitti1" />
+  </div>
+</template>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background-color: #c22525;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+  A classe .container recebe inicialmente opacity: 0
+  e, ao longo de 1s, passa para opacity: 1 (efeito fade-in).
+*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vh;
+  color: #ffe9e9;
+  opacity: 0; /* Inicia invisível */
+  animation: fadeIn 1s ease forwards; /* Aplica animação */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* Fica totalmente visível */
+  }
+}
+
+h1 {
+  font-size: 10vh;
+  margin: 0;
+  line-height: 1;
+}
+
+.confeitti1 {
+  width: 20vh;
+}
+
+.mirror {
+  transform: scaleX(-1);
 }
 </style>
