@@ -20,23 +20,19 @@ body {
   align-items: center;
 }
 
-/* 
-  A classe .container recebe inicialmente opacity: 0
-  e, ao longo de 1s, passa para opacity: 1 (efeito fade-in).
-*/
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2vh;
   color: #ffe9e9;
-  opacity: 0; /* Inicia invisível */
-  animation: fadeIn 1s ease forwards; /* Aplica animação */
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
 }
 
 @keyframes fadeIn {
   to {
-    opacity: 1; /* Fica totalmente visível */
+    opacity: 1;
   }
 }
 
